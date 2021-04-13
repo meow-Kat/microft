@@ -319,10 +319,11 @@
 
         .information-title{
             padding: 36px 0 4px;
+            font-weight: 600;
         }
 
-        .information a{
+        .infor{
             padding: 8px 0;
             color: #616161;
+            font-size: 12px;
         }
-        
