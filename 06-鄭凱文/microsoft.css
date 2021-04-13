@@ -56,6 +56,16 @@
             align-items: center;
         }
 
+        nav .container .btns{
+            width: 47px;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            border: 1px solid black;
+        }
+
         nav .links {
             display: flex;
             align-items: center;
@@ -66,7 +76,7 @@
             margin: 0 15px;
         }
 
-        nav .logo {
+        nav .nav-left .logo {
             background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31);
             width: 108px;
             height: 23px;
@@ -331,7 +341,7 @@
         }
 
         .product-pic {
-            height: 22vh;
+            height: 10.7vw;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;  
@@ -497,7 +507,7 @@
 
         @media(max-width:1366px){
 
-            .option-hidden{
+            .option-1366-hidden{
                 display: none;
             }
 
@@ -558,7 +568,7 @@
             }
 
             .product-pic{
-                height: 38vh;
+                height: 25.1vw;
             }
 
             .buy-box-group{
@@ -590,8 +600,20 @@
                 display: flex;
             }
 
-            .product-pic{
-                height: 28vh;
+        }
+
+        @media(max-width:768px){
+            nav .container{
+                padding: 0 0 0 0.2%;
             }
+
+            nav .container .btns{
+            display: flex;
+            }
+
+            nav .link-768-hidden{
+                display: none;
+            }
+
         }
         
