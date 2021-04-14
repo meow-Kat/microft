@@ -128,6 +128,10 @@
             margin-left: 10px;
         }
 
+        .input{
+            display: none;
+        }
+
         .more{
             display: none;
             align-items: center;
