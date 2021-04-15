@@ -28,12 +28,11 @@
         // result.innerHTML 在result可以輸出文字
 
         submit.onclick = function () {
-            if (score == 0 ) {
+            if (score.value == '') {
                 result.innerHTML = '重新輸入'
             } else {
-
                 if (score.value < 0) {
-                    result.innerHTML = '404 not found，您是不是智商堪慮'
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為甲賽'
                 } else if (score.value < 60) {
                     result.innerHTML = '您的分數是' + score.value + '分，等級為己'
                 } else if (score.value < 70) {
