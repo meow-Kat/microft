@@ -51,11 +51,11 @@
             justify-content: center;
         }
 
-        .justify-content-around{
+        .justify-content-around {
             justify-content: space-around;
         }
 
-        .w-100{
+        .w-100 {
             width: 100%;
         }
 
@@ -144,21 +144,48 @@
 
         var result_BMI = document.querySelector('#result_BMI')
 
-        
-        
-        
-        
-        start_btn.onclick = function(){
+        var result_bodyStatus = document.querySelector('#result_bodyStatus')
+        var result_suggest = document.querySelector('#result_suggest')
+
+
+
+        start_btn.onclick = function () {
             resultCanvas.classList.add('active')
 
-            height.value = height.value / 100
-            result_BMI.value = weight.value / Math.pow( height.value, 2)
-            console.log(result_BMI.value);
+            var height_sav1 = height.value / 100;
+            var height_save2 = Math.pow(height_sav1, 2);
+            var weight_save = weight.value
+            var BMI = weight_save / height_save2
+
+            result_BMI.innerHTML = BMI.toFixed(1)
+
+            if (BMI == '') {
+                result_bodyStatus.innerHTML = '體重過輕'
+                result_suggest.innerHTML = '快去吃個5塊雞壓壓驚'
+            } else if (BMI < 24) {
+                result_bodyStatus.innerHTML = '正常範圍'
+                result_suggest.innerHTML = '阿不就好棒棒逆'
+            } else if (BMI < 27) {
+                result_bodyStatus.innerHTML = '過重'
+                result_suggest.innerHTML = '先跳個baby shark 10遍'
+            } else if (BMI < 30) {
+                result_bodyStatus.innerHTML = '輕度肥胖'
+                result_suggest.innerHTML = '不要再喝肥宅快樂水了，趕快去運動'
+            } else {
+                result_bodyStatus.innerHTML = '輕度肥胖'
+                result_suggest.innerHTML = '恭喜獲得成吉思汗"付費會員"，外加館長特別指導'
+            }
+        }
+
+        reset_btn.onclick = function () {
+            resultCanvas.classList.remove('active')
 
 
         }
-   
-    
+
+
+
+
     </script>
 </body>
 
