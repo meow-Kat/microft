@@ -65,6 +65,20 @@
             border: 1px solid black;
         }
 
+        #btn-list{
+            width: 100%;
+            position: absolute;
+            top: 55px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        nav .container .btn-list a{
+            padding: 14px;
+            border: 1px double transparent;
+        }
+
         nav .links {
             display: flex;
             align-items: center;
@@ -150,23 +164,31 @@
             background-repeat: no-repeat;
         }
 
-        .option-lists{
+        input{
+            display: none;
+        }
+
+        #option-all:checked + #hidden{
             display: flex;
+        }
+
+        .option-lists{
+            width: 1200px;
+            display: none;
             flex-direction: column;
             position: relative;
             position: absolute;
             top: 55px;
-            right: 80px;
+            right: 50%;
+            transform: translateX(50%);
             background-color: #F2F2F2;
             z-index: 1;
         }
 
         .option-list{
-            width: 1228px;
-            /* height: 388px; */
             z-index: 1;
-            
             display: flex;
+            flex-wrap: wrap;
         }
 
         .option-list-item{
@@ -429,33 +451,17 @@
             margin: auto;
         }
 
-        .information-group{
-            width: 50%;
-            display: flex;
-            align-content: space-between;
-            justify-content: space-between;
-        }
-
         .information{
             width: 100%;
             display: flex;
-
             justify-content: space-between;
             color: #616161;
         }
 
         .information-box{
             width: 228px;
-            padding: 0 12px;
             display: flex;
             flex-direction: column;
-
-        }
-
-        .information-box:nth-child(1){
-            width: 216px;
-            padding: 0;
-            padding-right: 12px;
         }
 
         .information-title{
@@ -500,12 +506,16 @@
         }
 
         .footer-nav-right li{
+            
             padding-right :24px ;
             font-size: 12px;
             color: #616161;
         }
 
         @media(max-width:1366px){
+            .option-lists{
+                width: 1020px;
+            }
 
             .option-1366-hidden{
                 display: none;
@@ -542,6 +552,10 @@
                 display: flex;
             }
 
+            .option-lists{
+                width: 820px;
+            }
+
             nav .options .option .user {
                 width: 32px;
                 height: 32px;
@@ -554,6 +568,10 @@
 /* main */
             .banner-container{
                 padding: 0;
+            }
+
+            .banner2{
+                padding-top: 40px;
             }
 
             .picture-title{
@@ -596,11 +614,11 @@
             }
 
             .information{
-                flex-direction: column;
+                flex-wrap: wrap;
             }
 
-            .information-group{
-                width: 100%;
+            .information-box{
+                width: 33%;
             }
 
 
@@ -629,10 +647,6 @@
                 margin-right: auto;
             }
 
-            
-            .btns{
-                margin-left: 1px;
-            }
 
             nav .options .option .search {
                 margin-left: 0;
@@ -640,7 +654,8 @@
 
             nav .container .btns{
                 display: flex;
-                }
+                margin-left: 1px;
+            }
 
             nav .link-768-hidden{
                 display: none;
@@ -697,10 +712,37 @@
             .footer-nav .footer-nav-left {
                 padding: 6px 0 ;
             }
-        
 
+            .footer-nav-right{
+                flex-wrap: wrap;
+            }
 
-
+            .footer-nav-right li{
+                padding-right :10px ;
+            }
 
         }
-        
+        @media(max-width:500px){
+            .product{
+                flex-wrap: unset;
+                flex-direction: column;
+            }
+
+            .product-card{
+                width: 100%;
+            }
+
+            .product-pic{
+                height: 242px;
+            }
+
+            .information{
+                flex-wrap: unset;
+                flex-direction: column;
+            }
+
+            .footer-nav-right li{
+                padding-top :6px ;
+            }
+
+        }
