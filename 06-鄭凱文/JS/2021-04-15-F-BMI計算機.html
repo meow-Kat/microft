@@ -150,7 +150,7 @@
         var result_suggest = document.querySelector('#result_suggest')
 
 
-        
+
         start_btn.onclick = function () {
             resultCanvas.classList.add('active')
 
@@ -159,34 +159,40 @@
             // var weight_save = weight.value
             // var BMI = weight_save / height_save2
 
+            // 判斷是否不是數字 isNaN(height.value)
+            if (height.value == null || weight.value == null || isNaN(height.value) || isNaN(weight.value) || height.value < 0 || weight.value < 0) {
+                // 警示視窗
+                window.alert('請輸入正常值')
+            } else {
 
-            // 可以直接這樣用
-            var BMI = weight.value/Math.pow(height.value/100, 2);
+                // 可以直接這樣用
+                var BMI = weight.value / Math.pow(height.value / 100, 2)
 
-            result_BMI.innerHTML = BMI.toFixed(1)
+                result_BMI.innerHTML = BMI.toFixed(1)
 
-            if (BMI == '') {
-                result_bodyStatus.innerHTML = '體重過輕'
-                result_suggest.innerHTML = '快去吃個5塊雞壓壓驚'
-            } else if (BMI < 24) {
-                result_bodyStatus.innerHTML = '正常範圍'
-                result_suggest.innerHTML = '阿不就好棒棒逆'
-            } else if (BMI < 27) {
-                result_bodyStatus.innerHTML = '過重'
-                result_suggest.innerHTML = '先跳個 baby shark 10遍'
-            } else if (BMI < 30) {
-                result_bodyStatus.innerHTML = '輕度肥胖'
-                result_suggest.innerHTML = '不要再喝肥宅快樂水了，趕快去運動'
-            } else if(BMI >= 35) {
-                result_bodyStatus.innerHTML = '輕度肥胖'
-                result_suggest.innerHTML = '恭喜獲得成吉思汗"付費會員"，外加館長特別指導'
-            }else{
-                result_BMI.innerHTML = '?'
-                result_bodyStatus.innerHTML = '不管如何'
-                result_suggest.innerHTML = '來人，餵公子吃包子'
+                if (BMI == '') {
+                    result_bodyStatus.innerHTML = '體重過輕'
+                    result_suggest.innerHTML = '快去吃個5塊雞壓壓驚'
+                } else if (BMI < 24) {
+                    result_bodyStatus.innerHTML = '正常範圍'
+                    result_suggest.innerHTML = '阿不就好棒棒逆'
+                } else if (BMI < 27) {
+                    result_bodyStatus.innerHTML = '過重'
+                    result_suggest.innerHTML = '先跳個 baby shark 10遍'
+                } else if (BMI < 30) {
+                    result_bodyStatus.innerHTML = '輕度肥胖'
+                    result_suggest.innerHTML = '不要再喝肥宅快樂水了，趕快去運動'
+                } else if (BMI >= 35) {
+                    result_bodyStatus.innerHTML = '輕度肥胖'
+                    result_suggest.innerHTML = '恭喜獲得成吉思汗"付費會員"，外加館長特別指導'
+                } else {
+                    result_BMI.innerHTML = '?'
+                    result_bodyStatus.innerHTML = '不管如何'
+                    result_suggest.innerHTML = '來人，餵公子吃包子'
+                }
+
             }
         }
-
         reset_btn.onclick = function () {
             resultCanvas.classList.remove('active')
             height.value = null
