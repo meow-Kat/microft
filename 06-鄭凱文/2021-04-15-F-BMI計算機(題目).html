@@ -167,7 +167,7 @@
                 result_suggest.innerHTML = '阿不就好棒棒逆'
             } else if (BMI < 27) {
                 result_bodyStatus.innerHTML = '過重'
-                result_suggest.innerHTML = '先跳個baby shark 10遍'
+                result_suggest.innerHTML = '先跳個 baby shark 10遍'
             } else if (BMI < 30) {
                 result_bodyStatus.innerHTML = '輕度肥胖'
                 result_suggest.innerHTML = '不要再喝肥宅快樂水了，趕快去運動'
@@ -179,7 +179,8 @@
 
         reset_btn.onclick = function () {
             resultCanvas.classList.remove('active')
-
+            height.value = null
+            weight.value = null
 
         }
 
